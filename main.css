@@ -1,14 +1,16 @@
 body {
-    background-color: whitesmoke;
+    background-color: black;
 }
-
+/* the container of the calculator size and layout */
 .calculator {
     border: double thick black;
     background-color: grey;
     padding: 2px;
     width: 254px;
+    margin-left: 10px;
+    margin-top: 15px;
 }
-
+/* the formatting of the calculator buttons */
 .square {
     border: solid thin rgb(207, 184, 223);
     border-radius: 10px;
@@ -16,14 +18,33 @@ body {
     background-color: rgb(87, 77, 192);
     height: 60px;
     width: 60px;
-    color:rgb(207, 184, 223);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: x-large;
+}
+/* how to lay out the calculator buttons */
+.square {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    color:rgb(207, 184, 223);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
 }
-
+/* creating color change on operand buttons as mouse in/out*/
+.number:hover {
+    background-color: rgb(207, 184, 223);
+    color: rgb(87, 77, 192);
+}
+/* creating color change on operator buttons as mouse in/out*/
+.operator:hover {
+    color: rgb(207, 184, 223);
+    background-color: rgb(87, 77, 192);
+}
+/* creating color change on clear button as mouse in/out*/
+#clear:hover {
+    background-color: rgb(207, 184, 223);
+    color: rgb(87, 77, 192);
+}
+/* formatting of the calculator results display */
 .display {
     background-color: rgb(207, 184, 223);
     height: 52px;
@@ -31,6 +52,9 @@ body {
     margin: 1px;
     border: double thick rgb(87, 77, 192);
     border-radius: 10px;
+}
+/* layout of the calculator display text */
+.display {
     font-size: xx-large;
     font-weight: thick;
     color:rgb(87, 77, 192);
@@ -39,7 +63,7 @@ body {
     align-items: flex-end;
     padding-right: 3px;
 }
-
+/* layout and style of operator buttons different from the default square */
 .operator {
     background-color: rgb(207, 184, 223);
     border-color:rgb(87, 77, 192);
@@ -47,10 +71,7 @@ body {
     font-weight: thick;
     color:rgb(87, 77, 192);
 }
-.teal {
-    background-color: teal;
-}
-
+/* display the calc button divs in a wrap */
 .row {
     display: flex;
 }
