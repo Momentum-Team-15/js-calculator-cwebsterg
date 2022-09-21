@@ -32,7 +32,32 @@ const display = document.querySelector(".display")
 //   display.appendChild(newElement)
 // })
 
-let squares = Array.from(document.getElementsByClassName("square"));
+let squares = document.querySelectorAll(".square");
+// TWO different ways to build the "array" to call from: QUERY SELECTOR ALL or ARRAY
+// let squares = Array.from(document.getElementsByClassName("square"));
+// declaring the name of new array containing all squares (operators and operands) => mapping array into switch case statements allowing for clearing of display, evaluation of display text, or adding to the items to calculate
+for (let square of squares){
+// squares.map((square) => {
+  square.addEventListener("click", (e) => {
+    switch (square.innerText) {
+      case "C":
+        display.innerText = "";
+        break;
+      case "=":
+        display.innerText = eval(display.innerText);
+        break;
+      default:
+        display.innerText += square.innerText;
+    }
+  })
+}
+// )
+// note on lines 47 and 39 above, square.innerText could also be e.target.innerText -- both work...like to know why you would use one over the other
+
+
+
+/* let squares = Array.from(document.getElementsByClassName("square"));
+// declaring the name of new array containing all squares (operators and operands)
 // declaring the name of new array containing all squares (operators and operands) => mapping array into switch case statements allowing for clearing of display, evaluation of display text, or adding to the items to calculate
 squares.map((square) => {
   square.addEventListener("click", (e) => {
@@ -48,6 +73,4 @@ squares.map((square) => {
     }
   })
 }
-)
-// note on lines 47 and 39 above, square.innerText could also be e.target.innerText -- both work...like to know why you would use one over the other
-
+*/
